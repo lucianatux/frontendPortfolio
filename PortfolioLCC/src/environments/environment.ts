@@ -3,8 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: true,
-  URL: 'https://backendportfolio-production-f5d9.up.railway.app/'
+  production: false
 };
 
 /*
