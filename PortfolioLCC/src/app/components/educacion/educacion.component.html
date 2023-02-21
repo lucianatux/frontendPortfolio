@@ -1,0 +1,43 @@
+<div class="container" id="educac">
+  <h2 class="subtitulo">Educación</h2>
+  <div class="row">
+    <div class="col-lg-11">
+      <div class="col-lg-2">
+        <button
+          type="button"
+          class="btn btn-dark"
+          routerLink="/nuevaeduc"
+          *ngIf="isLogged"
+        >
+          Agregar Educación
+        </button>
+      </div>
+
+      <div class="col lg 1"></div>
+      <div class="col-lg-11">
+        <table class="table">
+          <tbody>
+            <tr *ngFor="let Educacion of educacion">
+              <td>
+                <h4>{{ Educacion.estudio }}</h4>
+              </td>
+              <td>{{ Educacion.periodo }}</td>
+              <td>{{ Educacion.descripcion }}</td>
+              <td *ngIf="isLogged">
+                <button
+                  class="btn btn-light"
+                  routerLink="/editeduc/{{ Educacion.id }}"
+                >
+                  <i class="bi bi-pencil-fill"></i></button>
+              </td>
+              <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="delete(Educacion.id)">
+                  <i class="bi bi-trash-fill"></i></button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
